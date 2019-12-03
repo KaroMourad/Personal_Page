@@ -1,15 +1,13 @@
 import * as React from "react"
 import ThemeContext from "../context/ThemeContext";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
 import "./header.css"
 import Lang from "./lang/lang";
+import LinkWithAni from "./LinkWithAni";
 
 interface IHeader
 {
     siteTitle: string;
 }
-
-
 
 const Header = ({ siteTitle = "" }: IHeader) => (
     <ThemeContext.Consumer>
@@ -17,7 +15,7 @@ const Header = ({ siteTitle = "" }: IHeader) => (
             <header style={styles.headerStyle}>
                 <div style={styles.container}>
                     <h1 style={{ margin: 0 }}>
-                        <AniLink style={styles.linkStyle} cover="true" bg="#663399" to="/">{siteTitle}</AniLink>
+                        <LinkWithAni style={styles.linkStyle} cover="true" bg="#663399" to="/">{siteTitle}</LinkWithAni>
                     </h1>
 
                     <div className="can-toggle demo-rebrand-2">

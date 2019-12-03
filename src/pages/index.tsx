@@ -1,11 +1,11 @@
-import * as React from "react"
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-import AniLink from "gatsby-plugin-transition-link/AniLink";
-import { injectIntl, FormattedMessage } from "gatsby-plugin-intl"
+import * as React from "react";
+import Layout from "../components/layout";
+import Image from "../components/image";
+import SEO from "../components/seo";
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
+import LinkWithAni from "../components/LinkWithAni";
 
-const IndexPage = () => 
+const IndexPage = () =>
 {
     return (
         <Layout>
@@ -16,20 +16,20 @@ const IndexPage = () =>
             <h1><FormattedMessage id="hi" /></h1>
             <nav style={{ listStyleType: "none" }}>
                 <li>
-                    <AniLink swipe="true" direction="left" to="about">
+                    <LinkWithAni to="/about" swipe="true" direction="left" >
                         <FormattedMessage id="go_to" />{" "}
                         <FormattedMessage id="about" />
-                    </AniLink>
+                    </LinkWithAni>
                 </li>
                 <li>
-                    <AniLink swipe="true" direction="left" to="projects">
+                    <LinkWithAni to="/projects" swipe="true" direction="left" >
                         <FormattedMessage id="go_to" />{" "}
                         <FormattedMessage id="projects" />
-                    </AniLink>
+                    </LinkWithAni>
                 </li>
             </nav>
         </Layout>
     );
-}
+};
 
 export default injectIntl(IndexPage);

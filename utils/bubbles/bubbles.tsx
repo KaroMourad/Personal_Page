@@ -1,40 +1,40 @@
 import * as React from "react"
-import styled, { keyframes } from 'styled-components'
+import { style, keyframes } from 'typestyle'
 
 let list = [];
 
 function bubble(x, size, hue, distance, speed, delay, scale) 
 {
-    const float = keyframes`
-        from {
-            opacity: 1;
-            -webkit-transform: translate(-50%, 0) scale(0);
-                    transform: translate(-50%, 0) scale(0);
+    const float = keyframes({
+        "0%": {
+            opacity: 1,
+            transform: "translate(-50%, 0) scale(0)"
+        },
+        "100%": {
+            opacity: 0,
+            transform: `translate(-50%, calc(${distance} * -1vh)) scale(${scale})`
         }
-        to {
-            opacity: 0;
-            -webkit-transform: translate(-50%, calc(${distance} * -1vh)) scale(${scale});
-                    transform: translate(-50%, calc(${distance} * -1vh)) scale(${scale});
-        }
-    `
-    const Bub = styled.div`
-        animation-name: ${float};
-        animation-duration: calc(${speed} * 1s);
-        animation-delay: calc(${delay} * -1s);
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in-out;
-        background: radial-gradient(100% 115% at 25% 25%, #fff, transparent 33%), radial-gradient(15% 15% at 75% 75%, hsl(${hue}, 100%, 75%), transparent), radial-gradient(100% 100% at 50% 25%, transparent, hsl(${hue}, 100%, 70%) 98%);
-        border: 1px solid hsl(${hue}, 100%, 50%);
-        border-radius: 100%;
-        height: calc(${size} * 1px);
-        left: calc(${x} * 1%);
-        position: absolute;
-        top: 100%;
-        transform: translate(-50%, 0);
-        width: calc(${size} * 1px);
-        will-change: transform;
-    `
-    return <Bub key={`${x}+${size}+${hue}+${distance}+${speed}+${delay}+${scale}`} />;
+    })
+
+    const BubStyle = style({
+        "animationName": `${float}`,
+        "animationDuration": `calc(${speed} * 1s)`,
+        "animationDelay": `calc(${delay} * -1s)`,
+        "animationIterationCount": "infinite",
+        "animationTimingFunction": "ease-in-out",
+        "background": `radial-gradient(100% 115% at 25% 25%, #fff, transparent 33%), radial-gradient(15% 15% at 75% 75%, hsl(${hue}, 100%, 75%), transparent), radial-gradient(100% 100% at 50% 25%, transparent, hsl(${hue}, 100%, 70%) 98%);
+        border: 1px solid hsl(${hue}, 100%, 50%)`,
+        "borderRadius": "100%",
+        "height": `calc(${size} * 1px)`,
+        "left": `calc(${x} * 1%)`,
+        "position": "absolute",
+        "top": "100%",
+        "transform": "translate(-50%, 0)",
+        "width": `calc(${size} * 1px)`,
+        "willChange": "transform"
+    });
+
+    return <div key={`${x}+${size}+${hue}+${distance}+${speed}+${delay}+${scale}`} className={BubStyle} />;
 };
 
 const CreateBubbles = ({ propbubbleCount }: { propbubbleCount: number }) => 
@@ -57,7 +57,7 @@ const CreateBubbles = ({ propbubbleCount }: { propbubbleCount: number }) =>
             list.push(bubble(x, size, baseHue, distance, speed, delay, scale));
             setCount(count => count + 1);
         }
-    }, [count,list])
+    }, [count, list])
 
     React.useEffect(() => 
     {

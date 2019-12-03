@@ -1,9 +1,8 @@
-import * as React from "react"
-import AniLink from "gatsby-plugin-transition-link/AniLink";
-
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { injectIntl, FormattedMessage } from "gatsby-plugin-intl"
+import * as React from "react";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
+import LinkWithAni from "../components/LinkWithAni";
 
 const SecondPage = () => (
 
@@ -13,7 +12,7 @@ const SecondPage = () => (
             <FormattedMessage id="hi_from_the_page" />
             {" "}<FormattedMessage id="about" />
         </h2>
-        <AniLink swipe="true" diraction="left" to="/"><FormattedMessage id="go_back_to_the_homepage" /></AniLink>
+        <LinkWithAni swipe="true" diraction="left" to="/"><FormattedMessage id="go_back_to_the_homepage" /></LinkWithAni>
     </Layout>
 );
 

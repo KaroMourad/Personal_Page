@@ -29,14 +29,13 @@ module.exports = {
         },
         `gatsby-plugin-offline`,
         `gatsby-plugin-typescript`,
-        `gatsby-plugin-styled-components`,
         `gatsby-plugin-transition-link`,
         {
             resolve: `gatsby-plugin-intl`,
             options: {
                 path: `${__dirname}/src/locale`,
                 languages: [`en`, `ru`],
-                defaultLanguage: `en`,
+                defaultLanguage: `en`
             },
         },
     ],

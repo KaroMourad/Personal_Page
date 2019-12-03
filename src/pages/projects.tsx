@@ -1,15 +1,14 @@
 import * as React from "react"
-import AniLink from "gatsby-plugin-transition-link/AniLink";
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { injectIntl, FormattedMessage } from "gatsby-plugin-intl"
+import LinkWithAni from "../components/LinkWithAni";
 
 const Projects = () => (
     <Layout>
         <SEO title="Projects" />
         <h1><FormattedMessage id="here_my_projects" /></h1>
-        <AniLink swipe="true" diraction="left" to="/"><FormattedMessage id="go_back_to_the_homepage" /></AniLink>
+        <LinkWithAni swipe="true" diraction="left" to="/"><FormattedMessage id="go_back_to_the_homepage" /></LinkWithAni>
     </Layout>
 );
 
