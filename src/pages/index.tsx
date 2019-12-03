@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl"
 
 const IndexPage = () => 
 {
@@ -12,13 +13,23 @@ const IndexPage = () =>
             <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
                 <Image name="myImage" />
             </div>
-            <h1>Hi</h1>
-            <nav style={{listStyleType: "none"}}>
-                <li> <AniLink swipe="true" direction="left" to="about">Go to About</AniLink> </li>
-                <li> <AniLink swipe="true" direction="left" to="projects">Go to Projects</AniLink> </li>
+            <h1><FormattedMessage id="hi" /></h1>
+            <nav style={{ listStyleType: "none" }}>
+                <li>
+                    <AniLink swipe="true" direction="left" to="about">
+                        <FormattedMessage id="go_to" />{" "}
+                        <FormattedMessage id="about" />
+                    </AniLink>
+                </li>
+                <li>
+                    <AniLink swipe="true" direction="left" to="projects">
+                        <FormattedMessage id="go_to" />{" "}
+                        <FormattedMessage id="projects" />
+                    </AniLink>
+                </li>
             </nav>
         </Layout>
     );
 }
 
-export default IndexPage
+export default injectIntl(IndexPage);

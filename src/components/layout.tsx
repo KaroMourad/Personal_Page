@@ -55,7 +55,7 @@ const styles = {
         paddingTop: 0,
         height: "calc(100vh - 6.82rem)",
         "$nest": {
-            "& > main":{
+            "& > main": {
                 height: "100%"
             }
         }

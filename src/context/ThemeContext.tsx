@@ -25,7 +25,7 @@ const ThemeProvider = (props) =>
         if (lsDark)
         {
             setDark(lsDark);
-        } 
+        }
         else if (supportsDarkMode())
         {
             setDark(true);
