@@ -8,12 +8,27 @@ const SecondPage = () => (
 
     <Layout>
         <SEO title="About" />
-        <h2>
-            <FormattedMessage id="hi_from_the_page" />
-            {" "}<FormattedMessage id="about" />
+        <h2 style={styles.pageGreeting}>
+            <FormattedMessage id="hi_from_the_page" />{" "}
+            <FormattedMessage id="about" />
         </h2>
-        <LinkWithAni swipe="true" diraction="left" to="/"><FormattedMessage id="go_back_to_the_homepage" /></LinkWithAni>
+        <section style={styles.contentContainer}>
+            <LinkWithAni swipe="true" diraction="left" to="/"><FormattedMessage id="go_back_to_the_homepage" /></LinkWithAni>
+        </section>
     </Layout>
 );
 
 export default injectIntl(SecondPage);
+
+const styles = {
+    pageGreeting: {
+        paddingTop: "1.45rem"
+    },
+    contentContainer: {
+        flex: 1,
+        padding: "1.45rem",
+        display: "flex",
+        flexDirection: "column" as "column",
+        alignItems: "flex-end"
+    }
+};

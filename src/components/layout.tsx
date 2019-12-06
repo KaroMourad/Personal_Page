@@ -5,13 +5,14 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import ThemeContext from '../context/ThemeContext'
-import Header from "./header"
-import "./layout.css"
-import { style } from "typestyle"
-import CreateBubbles from "../../utils/bubbles/bubbles"
+import * as React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import ThemeContext from "../context/ThemeContext";
+import Header from "./header";
+import "./layout.css";
+import { style } from "typestyle";
+// import CreateBubbles from "../../utils/bubbles/bubbles";
+import ParticlesConfigured from "./ParticlesConfigured";
 
 const Layout = ({ children }) =>
 {
@@ -23,27 +24,26 @@ const Layout = ({ children }) =>
 				}
 			}
 		}
-	`)
+	`);
 
     return (
         <ThemeContext.Consumer>
             {theme => (
-                <div className={theme.dark ? 'dark' : 'light'}>
+                <div className={theme.dark ? "dark" : "light"}>
                     <Header siteTitle={data.site.siteMetadata.title} />
-                    <div className={styles.middlePageStyle} >
-                        <main>
-                            {children}
-                        </main>
+                    <div className={styles.middlePageStyle} style={{ background: theme.dark ? "#ffffff33" : "#2a2b2d33" }}>
+                        <main>{children}</main>
                         <footer style={styles.footer} >
                             © {new Date().getFullYear()}, Built by Karapet Muradyan
-				        </footer>
+                        </footer>
                     </div>
-                    <CreateBubbles propbubbleCount={30} />
+                    <ParticlesConfigured color={theme.dark ? "#ffffff" : "#2a2b2d"} />
+                    {/* <CreateBubbles propbubbleCount={30} /> */}
                 </div>
             )}
         </ThemeContext.Consumer>
-    )
-}
+    );
+};
 
 export default Layout;
 
@@ -53,10 +53,13 @@ const styles = {
         maxWidth: 960,
         padding: `0px 1.0875rem 1.45rem`,
         paddingTop: 0,
-        height: "calc(100vh - 6.82rem)",
+        height: "calc(100vh - 8.8rem)",
+        zIndex: 1,
+        position: "relative",
         "$nest": {
             "& > main": {
-                height: "100%"
+                height: "100%",
+                display: "flex"
             }
         }
     }),

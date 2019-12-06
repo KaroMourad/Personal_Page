@@ -40,11 +40,13 @@ template {
   display: none;
 }
 a {
+  color: #2a2b2d ;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 a:active,
 a:hover {
+
   outline-width: 0;
 }
 abbr[title] {
@@ -200,7 +202,7 @@ html {
 }
 body {
     height: 100vh;
-    overflow: auto;
+    overflow: hidden;
     box-sizing: border-box;
     color: hsla(0, 0%, 0%, 0.8);
     font-family: georgia, serif;
@@ -644,5 +646,13 @@ html .tl-edges
 }
 
 .gatsby-image-wrapper img {
-    border-radius: 46px;
+    border-radius: 8px;
+}
+
+.wrapperParticles {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
 }

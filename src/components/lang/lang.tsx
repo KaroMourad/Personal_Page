@@ -19,18 +19,18 @@ const Lang = () =>
         {
             let lis = list.map(l =>
             {
-                if (l != lang)
+                if (l !== lang)
                     return (
                         <li key={l} id={l}
-                            onMouseOver={onMouseOver}
-                            onMouseLeave={onMouseLeave} onClick={onChangeLocale} >
+                            className="hoverLang"
+                            onClick={onChangeLocale} >
                             {find(longName, l)[l]}
                         </li>
                     );
             });
             lis.unshift(
                 <li key={lang} id={lang}
-                    onMouseOver={onMouseOver} onMouseLeave={onMouseLeave}
+                    className="hoverLang"
                     onClick={onChangeLocale}>
                     {find(longName, lang)[lang]}
                 </li>);
@@ -42,7 +42,7 @@ const Lang = () =>
             {
                 return (
                     <li key={l} id={l}
-                        onMouseOver={onMouseOver} onMouseLeave={onMouseLeave}
+                        className="hoverLang"
                         onClick={onChangeLocale}>
                         {find(longName, l)[l]}
                     </li>);
@@ -50,26 +50,6 @@ const Lang = () =>
             setRenderList(lis);
         }
     }, []);
-
-    const onMouseOver = (e) =>
-    {
-        const element = e.target;
-        if (element.classList.contains("hoverLangLeave"))
-        {
-            element.classList.remove("hoverLangLeave");
-        }
-        element.classList.add("hoverLangEnter");
-    };
-
-    const onMouseLeave = (e) =>
-    {
-        const element = e.target;
-        if (element.classList.contains("hoverLangEnter"))
-        {
-            element.classList.remove("hoverLangEnter");
-        }
-        element.classList.add("hoverLangLeave");
-    };
 
     const onChangeLocale = (e) =>
     {
@@ -81,26 +61,26 @@ const Lang = () =>
 
     const onMouseOverUL = (e) =>
     {
-        const element = e.currentTarget;
-        if (element.classList.contains("overLangUiLeave"))
-        {
-            element.classList.remove("overLangUiLeave");
-        }
-        element.classList.add("overLangUiEnter");
+        removeAddClass(e, "overLangUiLeave", "overLangUiEnter");
     };
 
     const onMouseLeaveUL = (e) =>
     {
+        removeAddClass(e, "overLangUiEnter", "overLangUiLeave");
+    };
+
+    const removeAddClass = (e, remove, add) =>
+    {
         const element = e.currentTarget;
-        if (element.classList.contains("overLangUiEnter"))
+        if (element.classList.contains(remove))
         {
-            element.classList.remove("overLangUiEnter");
+            element.classList.remove(remove);
         }
-        element.classList.add("overLangUiLeave");
+        element.classList.add(add);
     };
 
     return (
-        <ul className="langUi" onMouseOver={onMouseOverUL} onMouseLeave={onMouseLeaveUL}>
+        <ul className="langUi" onMouseEnter={onMouseOverUL} onMouseLeave={onMouseLeaveUL}>
             {renderList}
         </ul>
     );
