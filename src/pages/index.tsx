@@ -38,14 +38,16 @@ export default injectIntl(IndexPage);
 
 const styles = {
     imageContainer: {
-        width: "15vw",
-        maxWidth: `15vw`,
+        width: "13vw",
+        maxWidth: `300px`,
         marginBottom: `1.45rem`,
-        paddingTop: `1.45rem`
+        paddingTop: `1.45rem`,
+        flex: 1
     },
     contentContainer: {
-        flex: 1,
+        flex: 2,
         padding: "1.45rem",
+        paddingRight: 0,
         display: "flex",
         flexDirection: "column" as "column",
         alignItems: "flex-end"
