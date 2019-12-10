@@ -7,8 +7,12 @@
     "hi": "привет",
     "go_to": "перейти к",
     "hi_from_the_page": "привет со страницы",
-    "go_back_to_the_homepage": "перейти на главную страницу",
+    "homepage": "главная страница",
     "here": "вот",
     "my": "мой",
-    "here_my_projects": "вот мои проекты"
+    "here_my_projects": "вот мои проекты",
+    "contact": "контакт",
+    "contacts": "контакты",
+    "education": "образование",
+    "experience": "опыт"
 }

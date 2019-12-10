@@ -10,9 +10,9 @@ import { useStaticQuery, graphql } from "gatsby";
 import ThemeContext from "../context/ThemeContext";
 import Header from "./header";
 import "./layout.css";
-import { style } from "typestyle";
 // import CreateBubbles from "../../utils/bubbles/bubbles";
 import ParticlesConfigured from "./ParticlesConfigured";
+import NavMenu from "./NavMenu";
 
 const Layout = ({ children }) =>
 {
@@ -29,11 +29,14 @@ const Layout = ({ children }) =>
     return (
         <ThemeContext.Consumer>
             {theme => (
-                <div className={theme.dark ? "dark" : "light"}>
+                <div className={`${theme.dark ? "dark" : "light"} flex flex-col h-screen`}>
                     <Header siteTitle={data.site.siteMetadata.title} />
-                    <div className={styles.middlePageStyle} style={{ background: theme.dark ? "#ffffff33" : "#2a2b2d33" }}>
-                        <main>{children}</main>
-                        <footer style={styles.footer} >
+                    <div className="mx-auto my-0 max-w-5xl py-3 px-4 z-10 relative h-full w-full md:pt-0" style={{ background: theme.dark ? "#ffffff33" : "#2a2b2d33", height: "calc(100vh - 8.8rem)" }}>
+                        <main style={{ height: "calc(100% - 1rem)" }}>
+                            <NavMenu />
+                            {children}
+                        </main>
+                        <footer className="float-right text-base" >
                             © {new Date().getFullYear()}, Built by Karapet Muradyan
                         </footer>
                     </div>
@@ -46,24 +49,3 @@ const Layout = ({ children }) =>
 };
 
 export default Layout;
-
-const styles = {
-    middlePageStyle: style({
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `0px 1.0875rem 1.45rem`,
-        paddingTop: 0,
-        height: "calc(100vh - 8.8rem)",
-        zIndex: 1,
-        position: "relative",
-        "$nest": {
-            "& > main": {
-                height: "100%",
-                display: "flex"
-            }
-        }
-    }),
-    footer: {
-        float: "right" as "right"
-    }
-};

@@ -79,8 +79,20 @@ const Lang = () =>
         element.classList.add(add);
     };
 
+    const onClick = (e) =>
+    {
+        const element = e.currentTarget;
+        if (element.id === "ul")
+        {
+            if (!element.classList.contains("overLangUiEnter"))
+            {
+                removeAddClass(e, "overLangUiLeave", "overLangUiEnter");
+            }
+        }
+    };
+
     return (
-        <ul className="langUi" onMouseEnter={onMouseOverUL} onMouseLeave={onMouseLeaveUL}>
+        <ul id="ul" className="langUi ml-0 md:ml-5" onMouseEnter={onMouseOverUL} onClick={onClick} onMouseLeave={onMouseLeaveUL}>
             {renderList}
         </ul>
     );

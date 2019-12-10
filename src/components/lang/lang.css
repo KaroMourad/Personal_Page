@@ -4,10 +4,10 @@
     border-left: 4px solid #2196F3;
     padding-left: 16px;
     overflow: hidden;
-    height: 32px;
+    height: 2rem;
     width: 100px;
     margin-bottom: 0;
-    z-index: 1;
+    z-index: 10;
     min-width: 100px;
 }
 
@@ -44,11 +44,11 @@ html .hoverLang
 
 @keyframes grow 
 {
-    from {overflow: hidden;height: 32px; border-left: 4px solid #2196F3;}
-    to{ overflow: unset;height: calc(100% - 19px); border-left: 4px solid #74d32c;}
+    from {overflow: hidden;height: 2rem; border-left: 4px solid #2196F3;}
+    to{ overflow: unset;height: 5rem; border-left: 4px solid #74d32c;}
 }
 @keyframes toDefault 
 {
-    from{ overflow: unset;height: calc(100% - 19px); border-left: 4px solid #74d32c;}
-    to {overflow: hidden;height: 32px; border-left: 4px solid #2196F3;}
+    from{ overflow: unset;height: 5rem; border-left: 4px solid #74d32c;}
+    to {overflow: hidden;height: 2rem; border-left: 4px solid #2196F3;}
 }

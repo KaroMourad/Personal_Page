@@ -1,7 +1,6 @@
 .can-toggle {
     position: relative;
     width: 100px;
-    margin: 0 1rem
 }
 .can-toggle *, .can-toggle *:before, .can-toggle *:after {
     box-sizing: border-box;
@@ -48,7 +47,7 @@
 .can-toggle label .can-toggle__switch:after {
     content: attr(data-unchecked);
     position: absolute;
-    z-index: 5;
+    z-index: 10;
     text-transform: uppercase;
     text-align: center;
     background: white;

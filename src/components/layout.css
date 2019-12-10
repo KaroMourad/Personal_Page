@@ -1,5 +1,5 @@
 html {
-  font-family: sans-serif;
+font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -187,7 +187,7 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em georgia, serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   box-sizing: border-box;
   overflow: auto;
 }
@@ -205,7 +205,7 @@ body {
     overflow: hidden;
     box-sizing: border-box;
     color: hsla(0, 0%, 0%, 0.8);
-    font-family: georgia, serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-weight: normal;
     word-wrap: break-word;
     font-kerning: normal;
@@ -656,3 +656,37 @@ html .tl-edges
     left: 0;
     bottom: 0;
 }
+
+.menu {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    border-bottom: 1px solid #007eff;
+    transition: all 0.35s ease-out;
+    white-space: nowrap;
+}
+
+.menu:hover {
+    border-top: 4px solid #75d32d;
+    border-bottom: 5px solid #75d32d;
+    transform: rotate(5deg);
+}
+
+.sectionHeight 
+{
+    height: calc(100% - 23rem);
+    min-height: 10rem;
+}
+
+@media (min-width: 640px) {
+    .sectionHeight {
+        height: calc(100% - 16rem)
+    }
+}
+
+@media (min-width: 768px) {
+    .sectionHeight {
+        height: calc(100% - 3rem)
+    }
+}
+

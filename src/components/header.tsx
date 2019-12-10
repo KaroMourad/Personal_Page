@@ -2,23 +2,24 @@ import * as React from "react";
 import ThemeContext from "../context/ThemeContext";
 import "./header.css";
 import Lang from "./lang/lang";
+import { injectIntl } from "gatsby-plugin-intl";
 import LinkWithAni from "./LinkWithAni";
 
-interface IHeader
-{
-    siteTitle: string;
-}
-
-const Header = ({ siteTitle = "" }: IHeader) => (
+const Header = ({ siteTitle = "" }: { siteTitle: string }) => (
     <ThemeContext.Consumer>
         {theme => (
-            <header style={styles.headerStyle}>
-                <div style={styles.container}>
-                    <h1 style={{ margin: 0, zIndex: 1 }}>
-                        <LinkWithAni style={styles.linkStyle} cover="true" bg={theme.dark ? "#ffffff" : "#2a2b2d"} to="/">{siteTitle}</LinkWithAni>
+            <header className="" >
+                <div className="mx-auto my-0 max-w-5xl py-3 px-4 h-40 flex items-center justify-between relative">
+                    <h1 className="m-0 z-10 sm:text-4xl text-3xl w-2/3 tracking-tight">
+                        <LinkWithAni className="text-black no-underline"
+                            cover="true" bg={theme.dark ? "#ffffff" : "#2a2b2d"} to="/">
+                            {siteTitle}
+                        </LinkWithAni>
                     </h1>
-                    <div style={styles.langAndDarkModeContainer}>
-                        <div className="can-toggle demo-rebrand-2">
+
+                    <div className="flex h-full md:flex-row flex-col justify-between items-end md:items-start">
+                        <Lang />
+                        <div className="can-toggle demo-rebrand-2 md:ml-5">
                             <input
                                 id="e"
                                 onChange={theme.toggleDark}
@@ -29,7 +30,6 @@ const Header = ({ siteTitle = "" }: IHeader) => (
                                 <div className="can-toggle__switch" data-checked="☾" data-unchecked="☀"></div>
                             </label>
                         </div>
-                        <Lang />
                     </div>
                 </div>
             </header>
@@ -37,28 +37,4 @@ const Header = ({ siteTitle = "" }: IHeader) => (
     </ThemeContext.Consumer>
 );
 
-export default Header;
-
-const styles = {
-    langAndDarkModeContainer: {
-        height: "100%",
-        display: "flex"
-    },
-    headerStyle: {
-        marginBottom: `0.45rem`
-    },
-    container: {
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `0.8rem 1.0875rem`,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        position: "relative" as "relative",
-        height: "150px"
-    },
-    linkStyle: {
-        color: "black",
-        textDecoration: `none`
-    }
-};
+export default injectIntl(Header);

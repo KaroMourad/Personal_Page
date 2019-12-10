@@ -4,14 +4,14 @@ import SEO from "../components/seo";
 import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
 import LinkWithAni from "../components/LinkWithAni";
 
-const Projects = () => (
+const Contact = () => (
     <Layout>
-        <SEO title="Projects" />
-        <h2 className="my-5"><FormattedMessage id="here_my_projects" /></h2>
+        <SEO title="Contact" />
+        <h2 className="my-5"><FormattedMessage id="contact" /></h2>
         <section className="flex flex-1 flex-col items-end p-5" >
             <LinkWithAni swipe="true" diraction="left" to="/"><FormattedMessage id="go_back_to_the_homepage" /></LinkWithAni>
         </section>
     </Layout>
 );
 
-export default injectIntl(Projects);
+export default injectIntl(Contact);

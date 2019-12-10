@@ -3,57 +3,24 @@ import Layout from "../components/layout";
 import Image from "../components/image";
 import SEO from "../components/seo";
 import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
-import LinkWithAni from "../components/LinkWithAni";
 
 const IndexPage = () =>
 {
     return (
         <Layout>
             <SEO title="Home" />
-            <div style={styles.imageContainer}>
+            <div className="w-1/2 md:w-1/3 max-w-xs inline-block float-right">
                 <Image name="myImage" />
             </div>
-            <section style={styles.contentContainer}>
-                <h1><FormattedMessage id="hi" /></h1>
-                <nav style={styles.nav}>
-                    <li>
-                        <LinkWithAni to="/about" swipe="true" direction="left" >
-                            <FormattedMessage id="go_to" />{" "}
-                            <FormattedMessage id="about" />
-                        </LinkWithAni>
-                    </li>
-                    <li>
-                        <LinkWithAni to="/projects" swipe="true" direction="left" >
-                            <FormattedMessage id="go_to" />{" "}
-                            <FormattedMessage id="projects" />
-                        </LinkWithAni>
-                    </li>
-                </nav>
+            <section className="md:pl-5 inline-block w-full sm:w-1/2 md:w-2/3 pr-0 sm:pr-5 overflow-hidden sectionHeight" >
+                <div className="text-xl font-semibold" style={{ lineHeight: "calc(1.3rem + 0.5vw)" }}>
+                    <div className="capitalize text-3xl my-3" ><FormattedMessage id="hi" /></div>
+                    I'm Software Developer involved in programming during last 2-3 years.
+                    Have a problem-solving mindset and quantitative skills.
+                </div>
             </section>
         </Layout>
     );
 };
 
 export default injectIntl(IndexPage);
-
-const styles = {
-    imageContainer: {
-        width: "13vw",
-        maxWidth: `300px`,
-        marginBottom: `1.45rem`,
-        paddingTop: `1.45rem`,
-        flex: 1
-    },
-    contentContainer: {
-        flex: 2,
-        padding: "1.45rem",
-        paddingRight: 0,
-        display: "flex",
-        flexDirection: "column" as "column",
-        alignItems: "flex-end"
-    },
-    nav: {
-        listStyleType: "none",
-        textAlign: "right" as "right"
-    }
-};

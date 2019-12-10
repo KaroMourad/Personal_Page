@@ -38,5 +38,6 @@ module.exports = {
                 defaultLanguage: `en`
             },
         },
+        `gatsby-plugin-postcss`
     ],
 }

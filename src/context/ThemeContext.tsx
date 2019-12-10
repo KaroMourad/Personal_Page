@@ -1,27 +1,27 @@
-import * as React from "react"
-import { useState } from "react"
+import * as React from "react";
+import { useState } from "react";
 
 const defaultState: { dark: boolean; toggleDark: () => any } = {
     dark: true,
     toggleDark: () => { },
-}
+};
 const ThemeContext = React.createContext(defaultState);
 
 const supportsDarkMode = () => window.matchMedia("(prefers-color-scheme: dark)").matches === true;
 
-const ThemeProvider = (props) => 
+const ThemeProvider = (props) =>
 {
     const [dark, setDark] = useState<boolean>(false);
 
     const toggleDark = (): void =>
     {
-        localStorage.setItem("dark", JSON.stringify(!dark))
+        localStorage.setItem("dark", JSON.stringify(!dark));
         setDark(!dark);
     };
 
     React.useEffect(() =>
     {
-        const lsDark = JSON.parse(localStorage.getItem("dark"))
+        const lsDark = JSON.parse(localStorage.getItem("dark"));
         if (lsDark)
         {
             setDark(lsDark);
@@ -39,5 +39,5 @@ const ThemeProvider = (props) =>
     );
 };
 
-export default ThemeContext
-export { ThemeProvider }
+export default ThemeContext;
+export { ThemeProvider };
