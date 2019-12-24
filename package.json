@@ -7,6 +7,7 @@
     "dependencies": {
         "gatsby": "^2.18.4",
         "gatsby-image": "^2.2.34",
+        "gatsby-image-background-slider": "0.0.1",
         "gatsby-plugin-intl": "^0.3.2",
         "gatsby-plugin-manifest": "^2.2.30",
         "gatsby-plugin-offline": "^3.0.24",
@@ -24,6 +25,7 @@
         "react-dom": "^16.12.0",
         "react-helmet": "^5.2.1",
         "react-particles-js": "^2.7.0",
+        "react-responsive-carousel": "^3.1.51",
         "three": "^0.111.0",
         "typestyle": "^2.0.4"
     },

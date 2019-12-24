@@ -10,7 +10,7 @@ const ParticlesConfigured = ({ color }: { color: string }) =>
             params={{
                 "particles": {
                     "number": {
-                        "value": 10,
+                        "value": 4,
                         "density": {
                             "enable": true,
                             "value_area": 800
@@ -35,7 +35,7 @@ const ParticlesConfigured = ({ color }: { color: string }) =>
                         }
                     },
                     "opacity": {
-                        "value": 0.3,
+                        "value": 0.1,
                         "random": false,
                         "anim": {
                             "enable": false,
@@ -100,7 +100,7 @@ const ParticlesConfigured = ({ color }: { color: string }) =>
                             "distance": 251,
                             "size": 39,
                             "duration": 2,
-                            "opacity": 1,
+                            "opacity": 0.5,
                             "speed": 3
                         } as any,
                         "repulse": {

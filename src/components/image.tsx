@@ -18,7 +18,7 @@ const Image = (props: IImage) =>
           }
         }
       }
-      raulogo: file(relativePath: { eq: "raulogo.jpg" }) {
+      raulogo: file(relativePath: { eq: "raulogo.png" }) {
         childImageSharp {
           fluid(maxWidth: 300, quality: 100) {
             ...GatsbyImageSharpFluid

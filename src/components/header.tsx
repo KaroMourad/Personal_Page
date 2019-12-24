@@ -11,12 +11,10 @@ const Header = ({ siteTitle = "" }: { siteTitle: string }) => (
             <header className="" >
                 <div className="mx-auto my-0 max-w-5xl py-3 px-4 h-40 flex items-center justify-between relative">
                     <h1 className="m-0 z-10 sm:text-4xl text-3xl w-2/3 tracking-tight">
-                        <LinkWithAni className="text-black no-underline"
-                            cover="true" bg={theme.dark ? "#ffffff" : "#2a2b2d"} to="/">
+                        <LinkWithAni className="text-black no-underline" cover="true" bg={theme.dark ? "#ffffff" : "#2a2b2d"} direction="right" to="/">
                             {siteTitle}
                         </LinkWithAni>
                     </h1>
-
                     <div className="flex h-full md:flex-row flex-col justify-between items-end md:items-start">
                         <Lang />
                         <div className="can-toggle demo-rebrand-2 md:ml-5">

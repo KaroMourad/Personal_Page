@@ -46,8 +46,11 @@ a {
 }
 a:active,
 a:hover {
-
   outline-width: 0;
+}
+a:active
+{
+    color: #83bffc;
 }
 abbr[title] {
   border-bottom: none;
@@ -640,6 +643,11 @@ pre tt:after {
     color: #fff !important;
 }
 
+.dark a:active
+{
+    color: #83bffc !important;
+}
+
 html .tl-edges 
 {
     overflow: hidden;
@@ -660,33 +668,79 @@ html .tl-edges
 .menu {
     text-align: center;
     text-transform: uppercase;
-    font-weight: 900;
+    font-weight: 800;
     border-bottom: 1px solid #007eff;
     transition: all 0.35s ease-out;
     white-space: nowrap;
+    margin-bottom: 0;
 }
 
 .menu:hover {
-    border-top: 4px solid #75d32d;
-    border-bottom: 5px solid #75d32d;
-    transform: rotate(5deg);
+    /* border-bottom: 3px solid #75d32d;
+    transform: rotate(4deg); */
+    margin-left: 0;
 }
 
-.sectionHeight 
+.activeElement 
 {
-    height: calc(100% - 23rem);
-    min-height: 10rem;
+    animation: fillText 0.5s ease forwards;
 }
 
-@media (min-width: 640px) {
-    .sectionHeight {
-        height: calc(100% - 16rem)
+@keyframes fillText 
+{
+    from {
+        fill:transparent;
+    }
+    to {
+        fill: #046daa;
     }
 }
 
-@media (min-width: 768px) {
-    .sectionHeight {
-        height: calc(100% - 3rem)
-    }
+
+.animFadeInLogos > div
+{ 
+    opacity: 0;
+}
+.animFadeInLogos > div:nth-child(1)
+{
+    animation: lineAnim 6s linear 1.5s forwards;
+    border-color: #02a700;
+    opacity: 1;
+    height: 0;
 }
 
+@keyframes lineAnim 
+{
+    from {height: 0;}
+    to {height: 100%;}
+}
+
+.animFadeInLogos > div:nth-child(2) {
+    animation: fadeInLogo 0.2s ease 1.5s forwards;
+}
+.animFadeInLogos > div:nth-child(3) {
+    animation: fadeInLogo 0.2s ease 3s forwards;
+}
+.animFadeInLogos > div:nth-child(4) {
+    animation: fadeInLogo 0.2s ease 5s forwards;
+}
+.animFadeInLogos > div:nth-child(5) {
+    animation: fadeInLogo 0.2s ease 7s forwards;
+}
+
+@keyframes fadeInLogo {
+    from {opacity: 0;transform: translateY(-20%);} 
+    to {opacity: 1;transform: translateY(0%);}
+}
+
+.animTextContainer > p
+{
+    animation: animText 0.5s ease 1.2s forwards;
+    opacity: 0;
+}
+
+@keyframes animText
+{
+    from {opacity:0;transform:translateX(20%)}
+    to {opacity:1;transform:translateX(0%)}
+}

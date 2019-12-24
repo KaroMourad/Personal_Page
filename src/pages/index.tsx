@@ -9,11 +9,11 @@ const IndexPage = () =>
     return (
         <Layout>
             <SEO title="Home" />
-            <div className="w-1/2 md:w-1/3 max-w-xs inline-block float-right">
+            <div className="mt-2 w-1/2 md:w-1/3 max-w-xs inline-block float-right">
                 <Image name="myImage" />
             </div>
-            <section className="md:pl-5 inline-block w-full sm:w-1/2 md:w-2/3 pr-0 sm:pr-5 overflow-hidden sectionHeight" >
-                <div className="text-xl font-semibold" style={{ lineHeight: "calc(1.3rem + 0.5vw)" }}>
+            <section className="md:pl-5 inline-block w-full md:w-2/3 pr-0 sm:pr-5 overflow-hidden " >
+                <div className="text-base sm:text-lg font-semibold" style={{ lineHeight: "calc(1.3rem + 0.5vw)" }}>
                     <div className="capitalize text-3xl my-3" ><FormattedMessage id="hi" /></div>
                     I'm Software Developer involved in programming during last 2-3 years.
                     Have a problem-solving mindset and quantitative skills.

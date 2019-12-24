@@ -9,7 +9,6 @@ const Projects = () => (
         <SEO title="Projects" />
         <h2 className="my-5"><FormattedMessage id="here_my_projects" /></h2>
         <section className="flex flex-1 flex-col items-end p-5" >
-            <LinkWithAni swipe="true" diraction="left" to="/"><FormattedMessage id="go_back_to_the_homepage" /></LinkWithAni>
         </section>
     </Layout>
 );
