@@ -1,8 +1,7 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
-import LinkWithAni from "../components/LinkWithAni";
+import { injectIntl } from "gatsby-plugin-intl";
 
 const Experience = () => (
     <Layout>

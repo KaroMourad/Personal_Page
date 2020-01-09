@@ -669,10 +669,8 @@ html .tl-edges
     text-align: center;
     text-transform: uppercase;
     font-weight: 800;
-    border-bottom: 1px solid #007eff;
     transition: all 0.35s ease-out;
     white-space: nowrap;
-    margin-bottom: 0;
 }
 
 .menu:hover {
@@ -733,7 +731,7 @@ html .tl-edges
     to {opacity: 1;transform: translateY(0%);}
 }
 
-.animTextContainer > p
+.animTextContainer
 {
     animation: animText 0.5s ease 1.2s forwards;
     opacity: 0;
@@ -744,3 +742,4 @@ html .tl-edges
     from {opacity:0;transform:translateX(20%)}
     to {opacity:1;transform:translateX(0%)}
 }
+

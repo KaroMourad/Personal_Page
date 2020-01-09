@@ -11,6 +11,13 @@ const Image = (props: IImage) =>
 {
     const data = useStaticQuery(graphql`
     query {
+        gareginNjdehlogo: file(relativePath: { eq: "gareginNjdehlogo.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 300, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       fizmatlogo: file(relativePath: { eq: "fizmatlogo.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 300, quality: 100) {

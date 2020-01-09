@@ -35,7 +35,7 @@ const Layout = ({ children }) =>
                     <div className={`${theme.dark ? "dark" : "light"} flex flex-col h-screen`}>
                         <Header siteTitle={data.site.siteMetadata.title} />
                         <div className="mx-auto my-0 max-w-5xl py-3 px-4 z-10 relative h-full w-full md:pt-0" style={{ background: theme.dark ? "#ffffff33" : "#2a2b2d33" }}>
-                            <NavMenu active={window.location.pathname || ""} />
+                            <NavMenu active={window.location.pathname} />
                             <main className="md:pt-12 pt-0 h-full">
                                 {children}
                             </main>

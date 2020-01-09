@@ -15,29 +15,35 @@ const Education = () => (
             {/* <CarouselEducation /> */}
             <div className="animFadeInLogos w-full relative flex flex-col justify-between items-center my-8 ">
                 <div className="h-full absolute border-r-2 " style={{ left: "50%" }}></div>
-                <div className="animTextContainer relative w-full flex items-center" style={{ minHeight: "16rem" }}>
+                <div className="relative w-full flex items-center" style={{ minHeight: "16rem" }}>
+                    <div className={`${styles.roundInnerBorder} w-20 h-20 my-0 mx-auto fadeIn`} >
+                        <Image name="gareginNjdehlogo" />
+                    </div>
+                    <p className="animTextContainer absolute m-0 w-1/3 mx-4 sm:mx-8 text-sm sm:text-base" style={{ left: "60%" }}> Yerevan basic school N 161 named after Garegin Nzhdeh <br />2000-2008</p>
+                </div>
+                <div className="relative w-full flex items-center" style={{ minHeight: "16rem" }}>
                     <div className={`${styles.roundInnerBorder} w-20 h-20 my-0 mx-auto fadeIn`} >
                         <Image name="fizmatlogo" />
                     </div>
-                    <p className="absolute m-0 w-1/3 mx-4 sm:mx-8 text-sm sm:text-base" style={{ left: "60%" }}>Physics and Mathematics Specialized School named after Artashes Shahinyan <br />2008-2012</p>
+                    <p className="animTextContainer absolute m-0 w-1/3 mx-4 sm:mx-8 text-sm sm:text-base" style={{ left: "60%" }}>Physics and Mathematics Specialized School named after Artashes Shahinyan <br />2008-2012</p>
                 </div>
-                <div className="animTextContainer relative w-full flex items-center" style={{ minHeight: "16rem" }}>
+                <div className="relative w-full flex items-center" style={{ minHeight: "16rem" }}>
                     <div className={`${styles.roundInnerBorder} w-20 h-20 my-0 mx-auto fadeIn`} >
                         <Image name="raulogo" />
                     </div>
-                    <p className="absolute m-0 w-1/3 mx-4 sm:mx-8 text-sm sm:text-base" style={{ left: "0%" }}>Russian-Armenian University (bachelor degree)<br />2012-2016</p>
+                    <p className="animTextContainer absolute m-0 w-1/3 mx-4 sm:mx-8 text-sm sm:text-base" style={{ left: "0%" }}>Russian-Armenian University (bachelor degree)<br />2012-2016</p>
                 </div>
-                <div className="animTextContainer relative w-full flex items-center" style={{ minHeight: "16rem" }}>
+                <div className="relative w-full flex items-center" style={{ minHeight: "16rem" }}>
                     <div className={`${styles.roundInnerBorder} w-20 h-20 my-0 mx-auto fadeIn`} >
                         <Image name="acalogo" />
                     </div>
-                    <p className="absolute m-0 w-1/3 mx-4 sm:mx-8 text-sm sm:text-base" style={{ left: "60%" }}>Russian-Armenian University (bachelor degree)<br />2012-2016</p>
+                    <p className="animTextContainer absolute m-0 w-1/3 mx-4 sm:mx-8 text-sm sm:text-base" style={{ left: "60%" }}>Russian-Armenian University (bachelor degree)<br />2012-2016</p>
                 </div>
-                <div className="animTextContainer relative w-full flex items-center" style={{ minHeight: "16rem" }}>
+                <div className="relative w-full flex items-center" style={{ minHeight: "16rem" }}>
                     <div className={`${styles.roundInnerBorder} w-20 h-20 my-0 mx-auto fadeIn`} >
                         <Image name="raulogo" />
                     </div>
-                    <p className="absolute m-0 w-1/3 mx-4 sm:mx-8 text-sm sm:text-base" style={{ left: "0%" }}>Russian-Armenian University (bachelor degree)<br />2012-2016</p>
+                    <p className="animTextContainer absolute m-0 w-1/3 mx-4 sm:mx-8 text-sm sm:text-base" style={{ left: "0%" }}>Russian-Armenian University (bachelor degree)<br />2012-2016</p>
                 </div>
             </div>
         </section>

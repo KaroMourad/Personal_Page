@@ -9,7 +9,7 @@ const IndexPage = () =>
     return (
         <Layout>
             <SEO title="Home" />
-            <div className="mt-2 w-1/2 md:w-1/3 max-w-xs inline-block float-right">
+            <div className="mt-2 w-1/4 max-w-xs inline-block float-right">
                 <Image name="myImage" />
             </div>
             <section className="md:pl-5 inline-block w-full md:w-2/3 pr-0 sm:pr-5 overflow-hidden " >

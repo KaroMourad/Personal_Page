@@ -176,7 +176,7 @@
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
 }
 .can-toggle.demo-rebrand-2 input[type="checkbox"]:checked ~ label .can-toggle__switch:after {
-    transform: translate3d(58px, 0, 0);
+    transform: translate3d(35px, 0, 0);
 }
 .can-toggle.demo-rebrand-2 input[type="checkbox"]:checked:focus ~ label .can-toggle__switch:after, .can-toggle.demo-rebrand-2 input[type="checkbox"]:checked:hover ~ label .can-toggle__switch:after {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
@@ -186,11 +186,11 @@
 }
 .can-toggle.demo-rebrand-2 label .can-toggle__switch {
     height: 35px;
-    flex: 0 0 93px;
+    flex: 0 0 70px;
     border-radius: 35px;
 }
 .can-toggle.demo-rebrand-2 label .can-toggle__switch:before {
-    left: 56px;
+    left: 35px;
     font-size: 13px;
     line-height: 35px;
     width: 35px;

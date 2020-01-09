@@ -5,16 +5,16 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import * as React from "react"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import * as React from "react";
+import Helmet from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
 interface ISEO
 {
-    description?: string,
-    lang?: string,
-    meta?: any,
-    title?: string,
+    description?: string;
+    lang?: string;
+    meta?: any;
+    title?: string;
 }
 
 function SEO({ description = ``, lang = `en`, meta = [], title }: ISEO)
@@ -31,7 +31,7 @@ function SEO({ description = ``, lang = `en`, meta = [], title }: ISEO)
         }
       }
     `
-    )
+    );
 
     const metaDescription = description || site.siteMetadata.description;
 
@@ -75,7 +75,7 @@ function SEO({ description = ``, lang = `en`, meta = [], title }: ISEO)
                 },
             ].concat(meta)}
         />
-    )
+    );
 }
 
-export default SEO
+export default SEO;
