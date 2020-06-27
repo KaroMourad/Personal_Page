@@ -5,7 +5,7 @@
 
 .langUi {
     list-style-type: none;
-    border-right: 4px solid #2196F3;
+    border-right: 4px solid var(--main-blue);
     overflow: hidden;
     height: 0rem;
     width: 100px;
@@ -19,7 +19,7 @@ html .containerUL:hover .langUi {
     overflow: unset;
     height: calc(100% - 2rem);
     overflow: auto;
-    border-right: 4px solid #74d32c;
+    border-right: 4px solid var(--main-green);
 }
 
 .langUi > li {
@@ -47,7 +47,7 @@ html .hoverLang:hover {
 html .activeUl {
     opacity: 1;
     font-weight: bolder;
-    box-shadow: inset 0px 2rem #2196F3;
+    box-shadow: inset 0px 2rem var(--main-blue);
     transition: box-shadow 0.35s;
     margin: 0;
     padding: 0 0.5rem;

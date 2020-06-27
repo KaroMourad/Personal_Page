@@ -1,6 +1,7 @@
 
 .hamburger {
-    padding: 5px 5px;
+    position: relative;
+    padding: 5px 0;
     cursor: pointer;
     transition-property: opacity, filter;
     transition-duration: 0.15s;
@@ -122,7 +123,6 @@
 
 .openHamburgerNav {
     display: inline-flex;
-    background-color: #163a43;
     animation: fillBG 0.8s ease-in-out forwards;
     box-sizing: border-box;
     align-items: center;
@@ -130,23 +130,22 @@
 }
 
 .dark .openHamburgerNav, .dark .closeHamburgerNav {
-    background-color: #163a43;
+    background-color: #404142;
 }
 
 .light .openHamburgerNav, .light .closeHamburgerNav {
-    background-color: #ff7676;
+    background-color: #e8e8e8;
 }
 
 .closeHamburgerNav {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: #163a43;
     animation: closeFilledBG 0.8s ease-in-out forwards;
 }
 
 @media (min-width: 768px) {
-    .openHamburgerNav {
+    .dark .openHamburgerNav, .light .openHamburgerNav {
         background: none;
     }
 }

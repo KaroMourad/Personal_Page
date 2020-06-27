@@ -1,5 +1,5 @@
 import * as React from "react";
-import {useStaticQuery, graphql} from "gatsby";
+import {graphql, useStaticQuery} from "gatsby";
 import Img from "gatsby-image";
 
 interface IImage
@@ -39,9 +39,9 @@ const Image = (props: IImage) =>
           }
         }
       }
-      myImage: file(relativePath: { eq: "my.jpeg" }) {
+      myImage: file(relativePath: { eq: "myImg.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 300, quality: 100) {
+          fluid(maxWidth: 500, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }

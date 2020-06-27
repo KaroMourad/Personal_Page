@@ -35,13 +35,13 @@ const Layout = ({children}) =>
                     <div className={`${theme.dark ? "dark" : "light"} flex flex-col h-screen`}>
                         <Header siteTitle={data.site.siteMetadata.title}/>
                         <div className="mx-auto my-0 max-w-5xl py-3 px-4 z-10 relative h-full w-full md:pt-0"
-                             style={{background: theme.dark ? "#ffffff33" : "#2a2b2d33"}}>
+                             style={{background: theme.dark ? "#ffffff33" : "rgba(42,43,45,0.2)"}}>
                             <NavMenu active={window.location.pathname}/>
-                            <main className="md:pt-12 pt-0 h-full">
+                            <main className="md:pt-20 pt-0 h-full">
                                 {children}
                             </main>
                             <footer className="float-right text-base bottom-0 absolute" style={{right: "1rem"}}>
-                                © {new Date().getFullYear()}, Built by Karapet Muradyan
+                                © {new Date().getFullYear()}, Built by Karo Muradyan
                             </footer>
                         </div>
                         <ParticlesConfigured color={theme.dark ? "#ffffff" : "#2a2b2d"}/>

@@ -10,6 +10,12 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+:root {
+    --main-blue: #2196F3;
+    --main-green: #74d32c;
+}
+
+
 article,
 aside,
 details,
@@ -878,4 +884,17 @@ html .tl-edges {
 ::-webkit-scrollbar-thumb {
     background-color: darkgrey;
     outline: 1px solid slategrey;
+}
+
+.imgContainer {
+    min-width: 150px;
+    max-width: 300px;
+}
+
+.dark .imgContainer {
+    filter: drop-shadow(var(--main-green) 0px 0px 5px);
+}
+
+.light .imgContainer {
+    filter: drop-shadow(var(--main-blue) 0px 0px 5px);
 }
