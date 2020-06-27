@@ -1,5 +1,4 @@
-.svgContainer 
-{
+.svgContainer {
     position: absolute;
     background-color: #046daa;
     z-index: 10000;
@@ -10,90 +9,78 @@
     animation: afterSvg 1s ease forwards 3.5s;
 }
 
-#welcome 
-{
+#welcome {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     animation: fillSVG 0.5s ease forwards 3s;
 }
 
-#welcome path 
-{
+#welcome path {
     animation: fillSVG 0.5s ease forwards 3s;
 }
 
-#welcome > path:nth-child(1) 
-{
+#welcome > path:nth-child(1) {
     stroke-dasharray: 801;
     stroke-dashoffset: 801;
     animation: line-anim 2s ease forwards;
 }
 
-#welcome > path:nth-child(2) 
-{
+#welcome > path:nth-child(2) {
     stroke-dasharray: 515;
     stroke-dashoffset: 515;
     animation: line-anim 2s ease forwards 0.3s;
 }
 
-#welcome > path:nth-child(3) 
-{
+#welcome > path:nth-child(3) {
     stroke-dasharray: 239;
     stroke-dashoffset: 239;
     animation: line-anim 2s ease forwards 0.6s;
 }
 
-#welcome > path:nth-child(4) 
-{
+#welcome > path:nth-child(4) {
     stroke-dasharray: 398.9;
     stroke-dashoffset: 398.9;
     animation: line-anim 2s ease forwards 0.9s;
 }
 
-#welcome > path:nth-child(5) 
-{
+#welcome > path:nth-child(5) {
     stroke-dasharray: 433;
     stroke-dashoffset: 433;
     animation: line-anim 2s ease forwards 1.2s;
 }
 
-#welcome > path:nth-child(6) 
-{
+#welcome > path:nth-child(6) {
     stroke-dasharray: 668.7;
     stroke-dashoffset: 668.7;
     animation: line-anim 2s ease forwards 1.5s;
 }
 
-#welcome > path:nth-child(7) 
-{
+#welcome > path:nth-child(7) {
     stroke-dasharray: 515;
     stroke-dashoffset: 515;
     animation: line-anim 2s ease forwards 1.8s;
 }
 
-@keyframes line-anim 
-{
-    to{
+@keyframes line-anim {
+    to {
         stroke-dashoffset: 0;
     }
 }
 
-@keyframes fillSVG
-{
+@keyframes fillSVG {
     from {
-        fill:transparent;
+        fill: transparent;
     }
-    to{
+    to {
         fill: white;
     }
 }
 
-@keyframes afterSvg
-{
+@keyframes afterSvg {
     0% {
-       opacity: 1;
+        opacity: 1;
     }
     99% {
         opacity: 0;

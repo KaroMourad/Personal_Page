@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import {useStaticQuery, graphql} from "gatsby";
 import Img from "gatsby-image";
 
 interface IImage
@@ -49,7 +49,7 @@ const Image = (props: IImage) =>
     }
   `);
 
-    return <Img fluid={data[props.name].childImageSharp.fluid} />;
+    return <Img fluid={data[props.name].childImageSharp.fluid}/>;
 };
 
 export default Image;

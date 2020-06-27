@@ -2,22 +2,28 @@ import * as React from "react";
 import ThemeContext from "../context/ThemeContext";
 import "./header.css";
 import Lang from "./lang/lang";
-import { injectIntl } from "gatsby-plugin-intl";
+import {injectIntl} from "gatsby-plugin-intl";
 import LinkWithAni from "./LinkWithAni";
 
-const Header = ({ siteTitle = "" }: { siteTitle: string }) => (
+const Header = ({siteTitle = null}: { siteTitle: string }) => (
     <ThemeContext.Consumer>
         {theme => (
-            <header className="" >
+            <header className="">
                 <div className="mx-auto my-0 max-w-5xl py-3 px-4 h-40 flex items-center justify-between relative">
-                    <h1 className="m-0 z-10 sm:text-4xl text-3xl w-2/3 tracking-tight">
-                        <LinkWithAni className="text-black no-underline" cover="true" bg={theme.dark ? "#ffffff" : "#2a2b2d"} direction="right" to="/">
-                            {siteTitle}
+                    <h1 className="m-0 z-10 sm:text-4xl text-3xl w-2/3 tracking-tight mb-4">
+                        <LinkWithAni
+                            className="text-black no-underline"
+                            cover="true"
+                            direction="right"
+                            to="/"
+                            bg={theme.dark ? "#ffffff" : "#2a2b2d"}
+                        >
+                            <span dangerouslySetInnerHTML={{__html: siteTitle}}/>
                         </LinkWithAni>
                     </h1>
                     <div className="flex h-full md:flex-row flex-col justify-between items-end md:items-start">
-                        <Lang />
-                        <div className="can-toggle demo-rebrand-2 md:ml-5">
+                        <Lang/>
+                        <div className="can-toggle demo-rebrand-2">
                             <input
                                 id="e"
                                 onChange={theme.toggleDark}
@@ -25,7 +31,7 @@ const Header = ({ siteTitle = "" }: { siteTitle: string }) => (
                                 checked={theme.dark}
                             />
                             <label htmlFor="e">
-                                <div className="can-toggle__switch" data-checked="☾" data-unchecked="☀"></div>
+                                <div className="can-toggle__switch" data-checked="☾" data-unchecked="☀"/>
                             </label>
                         </div>
                     </div>

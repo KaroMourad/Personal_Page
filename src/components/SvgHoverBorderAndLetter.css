@@ -38,6 +38,7 @@
     display: inline-block;
     border-radius: 3px;
 }
+
 #btn {
     stroke-width: 6px;
     fill: transparent;
@@ -46,22 +47,33 @@
     stroke-dashoffset: -275;
     transition: 1s all ease;
 }
+
 #btn-text {
     width: 180px;
     height: 50px;
     margin-top: -50px;
 }
+
 #btn-text a {
     color: white;
     text-decoration: none;
     font-size: 1.1em;
 }
+
 .svg_hover_wrapper:hover #btn {
     stroke-dasharray: 50 0;
     stroke-width: 3px;
     stroke-dashoffset: 0;
     stroke: #007eff;
 }
+
+.svg_hover_wrapper:active #btn {
+    stroke-dasharray: 500;
+    stroke-width: 3px;
+    stroke-dashoffset: 0;
+    stroke: #007eff;
+}
+
 .svg_hover_wrapper:hover #btn-text {
     transform: scale(1.1);
 }
@@ -72,15 +84,29 @@
     fill: none;
     text-anchor: middle;
     dominant-baseline: central;
-}
-.svg_hover_wrapper:hover #textSvgletter{
-    animation: fillText 0.5s ease forwards;
+    font-size: 1.2rem;
 }
 
-@keyframes fillText 
-{
+.dark .svg_hover_wrapper:hover #textSvgletter {
+    animation: fillTextDark 0.5s ease forwards;
+}
+
+@keyframes fillTextDark {
     from {
-        fill:transparent;
+        fill: transparent;
+    }
+    to {
+        fill: #046daa;
+    }
+}
+
+.light .svg_hover_wrapper:hover #textSvgletter {
+    animation: fillTextLight 0.5s ease forwards;
+}
+
+@keyframes fillTextLight {
+    from {
+        fill: transparent;
     }
     to {
         fill: #046daa;

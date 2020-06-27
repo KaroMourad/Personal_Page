@@ -7,7 +7,7 @@
 
 import * as React from "react";
 import Helmet from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
+import {graphql, useStaticQuery} from "gatsby";
 
 interface ISEO
 {
@@ -17,9 +17,9 @@ interface ISEO
     title?: string;
 }
 
-function SEO({ description = ``, lang = `en`, meta = [], title }: ISEO)
+function SEO({description = ``, lang = `en`, meta = [], title}: ISEO)
 {
-    const { site } = useStaticQuery(
+    const {site} = useStaticQuery(
         graphql`
       query {
         site {
@@ -37,9 +37,9 @@ function SEO({ description = ``, lang = `en`, meta = [], title }: ISEO)
 
     return (
         <Helmet
-            htmlAttributes={{ lang }}
+            htmlAttributes={{lang}}
             title={title}
-            titleTemplate={`%s | ${site.siteMetadata.title}`}
+            titleTemplate={`%s | ${site.siteMetadata.title.split("<br/>").join(" ")}`}
             meta={[
                 {
                     name: `description`,

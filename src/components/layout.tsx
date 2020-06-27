@@ -6,7 +6,7 @@
  */
 
 import * as React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import {graphql, useStaticQuery} from "gatsby";
 import ThemeContext from "../context/ThemeContext";
 import Header from "./header";
 import "./layout.css";
@@ -15,7 +15,7 @@ import ParticlesConfigured from "./ParticlesConfigured";
 import NavMenu from "./NavMenu";
 import Welcome from "./Welcome";
 
-const Layout = ({ children }) =>
+const Layout = ({children}) =>
 {
     const data = useStaticQuery(graphql`
 		query SiteTitleQuery {
@@ -31,19 +31,20 @@ const Layout = ({ children }) =>
         <ThemeContext.Consumer>
             {theme => (
                 <>
-                    <Welcome />
+                    <Welcome/>
                     <div className={`${theme.dark ? "dark" : "light"} flex flex-col h-screen`}>
-                        <Header siteTitle={data.site.siteMetadata.title} />
-                        <div className="mx-auto my-0 max-w-5xl py-3 px-4 z-10 relative h-full w-full md:pt-0" style={{ background: theme.dark ? "#ffffff33" : "#2a2b2d33" }}>
-                            <NavMenu active={window.location.pathname} />
+                        <Header siteTitle={data.site.siteMetadata.title}/>
+                        <div className="mx-auto my-0 max-w-5xl py-3 px-4 z-10 relative h-full w-full md:pt-0"
+                             style={{background: theme.dark ? "#ffffff33" : "#2a2b2d33"}}>
+                            <NavMenu active={window.location.pathname}/>
                             <main className="md:pt-12 pt-0 h-full">
                                 {children}
                             </main>
-                            <footer className="float-right text-base bottom-0 absolute" style={{ right: "1rem" }} >
+                            <footer className="float-right text-base bottom-0 absolute" style={{right: "1rem"}}>
                                 © {new Date().getFullYear()}, Built by Karapet Muradyan
-                        </footer>
+                            </footer>
                         </div>
-                        <ParticlesConfigured color={theme.dark ? "#ffffff" : "#2a2b2d"} />
+                        <ParticlesConfigured color={theme.dark ? "#ffffff" : "#2a2b2d"}/>
                         {/* <CreateBubbles propbubbleCount={30} /> */}
                     </div>
                 </>

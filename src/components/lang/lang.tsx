@@ -1,101 +1,92 @@
 import * as React from "react";
-import { injectIntl, changeLocale } from "gatsby-plugin-intl";
-import { useIntl } from "gatsby-plugin-intl";
+import {useRef} from "react";
+import {changeLocale, injectIntl, useIntl} from "gatsby-plugin-intl";
 import "./lang.css";
-import { find } from "lodash";
+import {find} from "lodash";
 
 const Lang = () =>
 {
     const intl = useIntl();
-    const lang = intl.locale;
-    const list = ["en", "ru"];
-    const longName = [{ "en": "English", "ru": "Русский" }];
+    const {locale} = intl;
+    const shortNameList = ["en", "ru"];
+    const longName = [{
+        "en": "English",
+        "ru": "Русский",
+    }];
 
     const [renderList, setRenderList] = React.useState([]);
+    const ulRef = useRef();
 
     React.useEffect(() =>
     {
-        if (lang && lang !== list[0])
+        let list = shortNameList.map(lang =>
         {
-            let lis = list.map(l =>
-            {
-                if (l !== lang)
-                    return (
-                        <li key={l} id={l}
-                            className="hoverLang"
-                            onClick={onChangeLocale} >
-                            {find(longName, l)[l]}
-                        </li>
-                    );
-            });
-            lis.unshift(
-                <li key={lang} id={lang}
-                    className="hoverLang"
-                    onClick={onChangeLocale}>
-                    {find(longName, lang)[lang]}
-                </li>);
-            setRenderList(lis);
-        }
-        else
-        {
-            let lis = list.map(l =>
+            if (lang !== locale)
             {
                 return (
-                    <li key={l} id={l}
-                        className="hoverLang"
-                        onClick={onChangeLocale}>
-                        {find(longName, l)[l]}
-                    </li>);
-            });
-            setRenderList(lis);
-        }
+                    <li key={lang} id={lang} className={`li hoverLang ${locale === lang ? "activeUl" : ""}`}>
+                        {find(longName, lang)[lang]}
+                    </li>
+                );
+            }
+        });
+        setRenderList(list);
     }, []);
-
-    const onChangeLocale = (e) =>
-    {
-        if (e.target.id !== lang)
-        {
-            changeLocale(e.target.id);
-        }
-    };
-
-    const onMouseOverUL = (e) =>
-    {
-        removeAddClass(e, "overLangUiLeave", "overLangUiEnter");
-    };
-
-    const onMouseLeaveUL = (e) =>
-    {
-        removeAddClass(e, "overLangUiEnter", "overLangUiLeave");
-    };
-
-    const removeAddClass = (e, remove, add) =>
-    {
-        const element = e.currentTarget;
-        if (element.classList.contains(remove))
-        {
-            element.classList.remove(remove);
-        }
-        element.classList.add(add);
-    };
 
     const onClick = (e) =>
     {
-        const element = e.currentTarget;
-        if (element.id === "ul")
+        // const elementUL = ulRef.current as HTMLUListElement;
+        if (e.currentTarget.id === "ul")
         {
-            if (!element.classList.contains("overLangUiEnter"))
-            {
-                removeAddClass(e, "overLangUiLeave", "overLangUiEnter");
-            }
+            onChangeLocale(e);
         }
     };
 
     return (
-        <ul id="ul" className="langUi ml-0 md:ml-5" onMouseEnter={onMouseOverUL} onClick={onClick} onMouseLeave={onMouseLeaveUL}>
-            {renderList}
-        </ul>
+        <div className="containerUL">
+            <li key={locale} id={locale} className="activeUl">
+                {find(longName, locale)[locale]}
+            </li>
+            <ul id="ul"
+                ref={ulRef}
+                className="langUi ml-0"
+                onClick={onClick}
+            >
+                {renderList}
+            </ul>
+        </div>
     );
+
+    function onChangeLocale(e)
+    {
+        const {id} = e.target;
+        if (id !== locale && shortNameList.indexOf(id) !== -1)
+        {
+            changeLocale(id);
+        }
+    }
+
+    //
+    // function onMouseEnter()
+    // {
+    //     console.log("onMouseEnter");
+    //     setOpened(true);
+    // }
+    //
+    // function onMouseLeave()
+    // {
+    //     console.log("onMouseLeave");
+    //     setOpened(false);
+    // }
+
+    // function removeAddClass(remove, add, element = ulRef.current as HTMLUListElement)
+    // {
+    //     if (element.classList.contains(remove))
+    //     {
+    //         element.classList.remove(remove);
+    //     }
+    //     element.classList.add(add);
+    // }
 };
 
 export default injectIntl(Lang);

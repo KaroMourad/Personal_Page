@@ -1,9 +1,11 @@
 import * as React from "react";
-import { useState } from "react";
+import {useState} from "react";
 
 const defaultState: { dark: boolean; toggleDark: () => any } = {
     dark: true,
-    toggleDark: () => { },
+    toggleDark: () =>
+    {
+    },
 };
 const ThemeContext = React.createContext(defaultState);
 
@@ -25,19 +27,18 @@ const ThemeProvider = (props) =>
         if (lsDark)
         {
             setDark(lsDark);
-        }
-        else if (supportsDarkMode())
+        } else if (supportsDarkMode())
         {
             setDark(true);
         }
     }, []);
 
     return (
-        <ThemeContext.Provider value={{ dark, toggleDark: toggleDark }} >
+        <ThemeContext.Provider value={{dark, toggleDark: toggleDark}}>
             {props.children}
         </ThemeContext.Provider>
     );
 };
 
 export default ThemeContext;
-export { ThemeProvider };
+export {ThemeProvider};

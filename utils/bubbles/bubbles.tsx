@@ -1,5 +1,6 @@
 import * as React from "react";
-import { style, keyframes } from "typestyle";
+import {keyframes, style} from "typestyle";
+
 const randomInRange = (max, min) => Math.floor(Math.random() * (max - min + 1)) + min;
 let list = [];
 
@@ -13,9 +14,9 @@ function bubble(x, size, hue, distance, speed, delay, scale)
 
         console.log("matrix", translateX, translateY, `calc(${distance} * -1vh)`);
         const keyframe = keyframes({
-            "0%": { transform: `translate(-50%, ${translateY}) scale(${scale})` },
-            "50%": { transform: `translate(-145%, ${translateY}) scale(0)` },
-            "100%": { transform: `translate(65%, calc(${distance} * -1vh) scale(1)` }
+            "0%": {transform: `translate(-50%, ${translateY}) scale(${scale})`},
+            "50%": {transform: `translate(-145%, ${translateY}) scale(0)`},
+            "100%": {transform: `translate(65%, calc(${distance} * -1vh) scale(1)`}
         });
         const loseBubble = style({
             "animation": `${keyframe} 0.5s linear`,
@@ -61,10 +62,11 @@ function bubble(x, size, hue, distance, speed, delay, scale)
         "willChange": "transform"
     });
 
-    return <div key={`${x}+${size}+${hue}+${distance}+${speed}+${delay}+${scale}`} className={BubStyle} onClick={handleClick} />;
+    return <div key={`${x}+${size}+${hue}+${distance}+${speed}+${delay}+${scale}`} className={BubStyle}
+                onClick={handleClick}/>;
 }
 
-const CreateBubbles = ({ propbubbleCount }: { propbubbleCount: number }) =>
+const CreateBubbles = ({propbubbleCount}: { propbubbleCount: number }) =>
 {
     const baseHue = randomInRange(0, 360);
     const [count, setCount] = React.useState(0);

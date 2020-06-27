@@ -1,8 +1,7 @@
-
 import React from "react";
 import Particles from "react-particles-js";
 
-const ParticlesConfigured = ({ color }: { color: string }) =>
+const ParticlesConfigured = ({color}: { color: string }) =>
 {
     return (
         <Particles
