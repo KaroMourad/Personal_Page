@@ -4,17 +4,12 @@ import LinkWithAni from "./LinkWithAni";
 import SvgHoverBorder from "./SvgButton/SvgHoverBorder";
 import "./hamburger.css";
 
-const NavMenu = (props) =>
+const NavMenu = () =>
 {
     const [isActive, setIsActive] = useState("");
 
-    const spl = props.active.split("/");
-    const active = spl[spl.length - 1];
     let time;
-
-    const links: string[] = ["education", "experience", "projects", "contacts"];
-
-    const renderNavLi: JSX.Element[] = getNavLinks(links);
+    const renderNavLi: JSX.Element[] = getNavLinks();
 
     return (
         <>
@@ -32,8 +27,10 @@ const NavMenu = (props) =>
         </>
     );
 
-    function getNavLinks(links: string[]): JSX.Element[]
+    function getNavLinks(): JSX.Element[]
     {
+        const links: string[] = ["education", "experience", "projects", "contacts"];
+        const active = typeof window !== "undefined" ? window.location.pathname.split("/").pop() : "";
         const activeIndex = links.indexOf(active);
 
         return links.map((link, index) =>
@@ -56,8 +53,8 @@ const NavMenu = (props) =>
         if (isActive)
         {
             setIsActive("deActive");
-            clearTimeout(time);
-            time = setTimeout(() =>
+            window.clearTimeout(time);
+            time = window.setTimeout(() =>
             {
                 setIsActive("");
             }, 800);

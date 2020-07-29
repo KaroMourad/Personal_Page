@@ -3,13 +3,18 @@ import "./welcome.css";
 
 const Welcome = () =>
 {
-    let welcome = sessionStorage.getItem("welcomeEnable");
-    if (welcome === null)
+    let welcome;
+    if (typeof window !== "undefined")
     {
-        sessionStorage.setItem("welcomeEnable", "true");
-    } else if (welcome === "true")
-    {
-        sessionStorage.setItem("welcomeEnable", "false");
+        welcome = window.sessionStorage.getItem("welcomeEnable");
+
+        if (welcome === null)
+        {
+            window.sessionStorage.setItem("welcomeEnable", "true");
+        } else if (welcome === "true")
+        {
+            window.sessionStorage.setItem("welcomeEnable", "false");
+        }
     }
 
     return welcome === "true" ? (

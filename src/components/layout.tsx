@@ -8,7 +8,7 @@
 import * as React from "react";
 import {graphql, useStaticQuery} from "gatsby";
 import ThemeContext from "../context/ThemeContext";
-import Header from "./header";
+import Header from "./Header/header";
 import "./layout.css";
 // import CreateBubbles from "../../utils/bubbles/bubbles";
 import ParticlesConfigured from "./ParticlesConfigured";
@@ -36,7 +36,7 @@ const Layout = ({children}) =>
                         <Header siteTitle={data.site.siteMetadata.title}/>
                         <div className="mx-auto my-0 max-w-5xl py-3 px-4 z-10 relative h-full w-full md:pt-0"
                              style={{background: theme.dark ? "#ffffff33" : "rgba(42,43,45,0.2)"}}>
-                            <NavMenu active={window.location.pathname}/>
+                            <NavMenu />
                             <main className="md:pt-20 pt-0 h-full">
                                 {children}
                             </main>

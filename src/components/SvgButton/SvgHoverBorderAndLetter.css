@@ -17,7 +17,7 @@
     height: 40px;
     margin-top: -40px;
     text-align: center;
-    
+
 }
 #btn-text a {
     color: white;
@@ -98,7 +98,7 @@ html .activeLink #btn {
     font-size: 1.2rem;
 }
 
-.dark .svg_hover_wrapper:hover #textSvgletter {
+.dark .svg_hover_wrapper:hover #textSvgletter, .dark .activeLink #textSvgletter {
     animation: fillTextDark 0.5s ease forwards;
 }
 
@@ -111,7 +111,7 @@ html .activeLink #btn {
     }
 }
 
-.light .svg_hover_wrapper:hover #textSvgletter {
+.light .svg_hover_wrapper:hover #textSvgletter, .light .activeLink #textSvgletter {
     animation: fillTextLight 0.5s ease forwards;
 }
 

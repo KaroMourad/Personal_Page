@@ -1,9 +1,9 @@
 import * as React from "react";
-import ThemeContext from "../context/ThemeContext";
+import ThemeContext from "../../context/ThemeContext";
 import "./header.css";
-import Lang from "./lang/lang";
+import Lang from "../lang/lang";
 import {injectIntl} from "gatsby-plugin-intl";
-import LinkWithAni from "./LinkWithAni";
+import LinkWithAni from "../LinkWithAni";
 
 const Header = ({siteTitle = null}: { siteTitle: string }) => (
     <ThemeContext.Consumer>

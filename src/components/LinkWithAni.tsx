@@ -7,8 +7,8 @@ const LinkWithAni = ({children, to = "/", language = "", ...rest}) =>
     const intl = useIntl();
     const lang = intl.locale;
     const languageLink = language || lang;
-    const {routed} = window["___gatsbyIntl"];
-    const link = routed ? `/${languageLink}/${to}` : `${to}`;
+    const routed = typeof window !== "undefined" ? window["___gatsbyIntl"].routed : null;
+    const link = (routed ? `/${languageLink}${to}` : `${to}`).replace("//", "/");
 
     return (
         <AniLink {...rest} to={link}>

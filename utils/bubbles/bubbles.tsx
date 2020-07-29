@@ -9,10 +9,9 @@ function bubble(x, size, hue, distance, speed, delay, scale)
     const handleClick = (e) =>
     {
         const matrix = getComputedStyle(e.target).transform.replace(/[^0-9\-.,]/g, "").split(",");
-        const translateX = matrix[12] || matrix[4];
+        // const translateX = matrix[12] || matrix[4];
         const translateY = matrix[13] || matrix[5];
 
-        console.log("matrix", translateX, translateY, `calc(${distance} * -1vh)`);
         const keyframe = keyframes({
             "0%": {transform: `translate(-50%, ${translateY}) scale(${scale})`},
             "50%": {transform: `translate(-145%, ${translateY}) scale(0)`},

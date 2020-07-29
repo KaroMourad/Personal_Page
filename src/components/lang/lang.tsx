@@ -9,10 +9,10 @@ const Lang = () =>
     const intl = useIntl();
     const {locale} = intl;
     const shortNameList = ["en", "ru"];
-    const longName = [{
-        "en": "English",
-        "ru": "Русский",
-    }];
+    const longName = [
+        {"en": "English"},
+        {"ru": "Русский"}
+    ];
 
     const [renderList, setRenderList] = React.useState([]);
     const ulRef = useRef();
@@ -65,28 +65,6 @@ const Lang = () =>
             changeLocale(id);
         }
     }
-
-    //
-    // function onMouseEnter()
-    // {
-    //     console.log("onMouseEnter");
-    //     setOpened(true);
-    // }
-    //
-    // function onMouseLeave()
-    // {
-    //     console.log("onMouseLeave");
-    //     setOpened(false);
-    // }
-
-    // function removeAddClass(remove, add, element = ulRef.current as HTMLUListElement)
-    // {
-    //     if (element.classList.contains(remove))
-    //     {
-    //         element.classList.remove(remove);
-    //     }
-    //     element.classList.add(add);
-    // }
 };
 
 export default injectIntl(Lang);
