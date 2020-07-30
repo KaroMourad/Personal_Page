@@ -38,6 +38,23 @@ module.exports = {
                 defaultLanguage: `en`
             },
         },
-        `gatsby-plugin-postcss`
+        `gatsby-plugin-postcss`,
+        {
+            resolve: 'gatsby-plugin-minify-html',
+            options: {
+                config: {
+                    // Enabled default by this plugin
+                    collapseWhitespace: true,
+                    minifyCSS: true,
+                    minifyJS: true,
+                    removeComments: true,
+                    removeScriptTypeAttributes: false,
+                    removeStyleLinkTypeAttributes: false,
+                    // Disabled default by html-minifier
+                    sortAttributes: true,
+                    useShortDoctype: true
+                }
+            }
+        }
     ],
 }
