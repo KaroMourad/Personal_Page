@@ -4,7 +4,7 @@ import "./header.css";
 import Lang from "../lang/lang";
 import LinkWithAni from "../LinkWithAni";
 
-const MyHeader = ({siteTitle = null}: { siteTitle: string }) => (
+const Header = ({siteTitle = null}: { siteTitle: string }) => (
     <ThemeContext.Consumer>
         {theme => (
             <header className="">
@@ -40,4 +40,4 @@ const MyHeader = ({siteTitle = null}: { siteTitle: string }) => (
     </ThemeContext.Consumer>
 );
 
-export default MyHeader;
+export default React.memo(Header);

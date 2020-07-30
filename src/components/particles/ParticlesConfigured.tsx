@@ -120,4 +120,4 @@ const ParticlesConfigured = ({color}: { color: string }) =>
     );
 };
 
-export default ParticlesConfigured;
+export default React.memo(ParticlesConfigured);

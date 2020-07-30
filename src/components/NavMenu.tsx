@@ -35,10 +35,9 @@ const NavMenu = () =>
 
         return links.map((link, index) =>
         {
-            const direction = activeIndex < index ? "left" : "right";
             return (
                 <li key={index + link} className={`menu px-0 py-0 my-4 md:mt-0 w-full text-xl md:text-base mb-1`}>
-                    <LinkWithAni to={`/${link}`} swipe="true" direction={direction}>
+                    <LinkWithAni to={`/${link}`} swipe="true" direction={activeIndex < index ? "left" : "right"}>
                         <SvgHoverBorder active={active === link ? "activeElement" : ""}>
                             <FormattedMessage id={link}/>
                         </SvgHoverBorder>
