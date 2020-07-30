@@ -2,10 +2,9 @@ import * as React from "react";
 import ThemeContext from "../../context/ThemeContext";
 import "./header.css";
 import Lang from "../lang/lang";
-import {injectIntl} from "gatsby-plugin-intl";
 import LinkWithAni from "../LinkWithAni";
 
-const Header = ({siteTitle = null}: { siteTitle: string }) => (
+const MyHeader = ({siteTitle = null}: { siteTitle: string }) => (
     <ThemeContext.Consumer>
         {theme => (
             <header className="">
@@ -41,4 +40,4 @@ const Header = ({siteTitle = null}: { siteTitle: string }) => (
     </ThemeContext.Consumer>
 );
 
-export default injectIntl(Header);
+export default MyHeader;

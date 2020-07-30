@@ -2,6 +2,8 @@ import * as React from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import fadeIn from "../components/fadeIn";
+import {injectIntl} from "gatsby-plugin-intl";
 
 const NotFoundPage = () => (
     <Layout>
@@ -11,4 +13,4 @@ const NotFoundPage = () => (
     </Layout>
 );
 
-export default NotFoundPage;
+export default injectIntl(fadeIn(NotFoundPage));

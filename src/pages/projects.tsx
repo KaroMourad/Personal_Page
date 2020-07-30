@@ -2,6 +2,7 @@ import * as React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import {FormattedMessage, injectIntl} from "gatsby-plugin-intl";
+import fadeIn from "../components/fadeIn";
 
 const Projects = () => (
     <Layout>
@@ -12,4 +13,4 @@ const Projects = () => (
     </Layout>
 );
 
-export default injectIntl(Projects);
+export default injectIntl(fadeIn(Projects));

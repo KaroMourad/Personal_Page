@@ -2,6 +2,7 @@ import * as React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import {injectIntl} from "gatsby-plugin-intl";
+import fadeIn from "../components/fadeIn";
 
 const Experience = () => (
     <Layout>
@@ -14,4 +15,4 @@ const Experience = () => (
     </Layout>
 );
 
-export default injectIntl(Experience);
+export default injectIntl(fadeIn(Experience));

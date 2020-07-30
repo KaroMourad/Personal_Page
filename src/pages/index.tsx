@@ -3,6 +3,7 @@ import Layout from "../components/layout";
 import Image from "../components/image";
 import SEO from "../components/seo";
 import {FormattedMessage, injectIntl} from "gatsby-plugin-intl";
+import fadeIn from "../components/fadeIn";
 
 const IndexPage = () =>
 {
@@ -23,4 +24,4 @@ const IndexPage = () =>
     );
 };
 
-export default injectIntl(IndexPage);
+export default injectIntl(fadeIn(IndexPage));

@@ -8,14 +8,15 @@
 import * as React from "react";
 import {graphql, useStaticQuery} from "gatsby";
 import ThemeContext from "../context/ThemeContext";
-import Header from "./Header/header";
 import "./layout.css";
-// import CreateBubbles from "../../utils/bubbles/bubbles";
-import ParticlesConfigured from "./ParticlesConfigured";
+import ParticlesConfigured from "./particles/ParticlesConfigured";
 import NavMenu from "./NavMenu";
-import Welcome from "./Welcome";
+import Welcome from "./welcome/Welcome";
+import Header from "./myHeader/myHeader";
 
-const Layout = ({children}) =>
+// import CreateBubbles from "../../utils/bubbles/bubbles";
+
+const Layout = (props) =>
 {
     const data = useStaticQuery(graphql`
 		query SiteTitleQuery {
@@ -27,18 +28,33 @@ const Layout = ({children}) =>
 		}
 	`);
 
+    let welcome;
+    if (typeof window !== "undefined")
+    {
+        welcome = window.sessionStorage.getItem("welcomeEnable");
+        if (welcome === "false")
+        {
+            // nothing to do
+        } else if (welcome === null)
+        {
+            window.sessionStorage.setItem("welcomeEnable", "true");
+        } else if (welcome === "true")
+        {
+            window.sessionStorage.setItem("welcomeEnable", "false");
+        }
+    }
     return (
         <ThemeContext.Consumer>
             {theme => (
                 <>
-                    <Welcome/>
+                    {welcome === "true" ? <Welcome/> : null}
                     <div className={`${theme.dark ? "dark" : "light"} flex flex-col h-screen`}>
                         <Header siteTitle={data.site.siteMetadata.title}/>
                         <div className="mx-auto my-0 max-w-5xl py-3 px-4 z-10 relative h-full w-full md:pt-0"
                              style={{background: theme.dark ? "#ffffff33" : "rgba(42,43,45,0.2)"}}>
-                            <NavMenu />
+                            <NavMenu/>
                             <main className="md:pt-20 pt-0 h-full">
-                                {children}
+                                {props.children}
                             </main>
                             <footer className="float-right text-base bottom-0 absolute" style={{right: "1rem"}}>
                                 © {new Date().getFullYear()}, Built by Karo Muradyan
