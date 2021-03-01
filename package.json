@@ -28,7 +28,7 @@
     "react-helmet": "^5.2.1",
     "react-particles-js": "^2.7.1",
     "react-responsive-carousel": "^3.2.9",
-    "three": "^0.111.0",
+    "three": "^0.125.0",
     "typestyle": "^2.1.0"
   },
   "devDependencies": {
